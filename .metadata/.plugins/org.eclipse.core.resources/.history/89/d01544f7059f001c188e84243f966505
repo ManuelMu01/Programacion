@@ -1,0 +1,24 @@
+public class Tablero2  {
+
+	public Ficha[][] casillas;
+	public char tirada;
+	
+	public Tablero2() {
+		this.tirada='B';
+		casillas=new Ficha[8][8];
+		
+		for (int x=0 ; x<8 ; x++) {
+			Ficha peon = new Peon(x);
+		}
+		
+	}
+	public void pintar() {
+		
+	}
+	public int mover(Posicion posIni, Posicion posFin) {
+		
+		return 0;
+		
+	}
+
+}

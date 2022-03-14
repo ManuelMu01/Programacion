@@ -1,0 +1,6 @@
+package a11Ajedrezv2;
+
+public class Peon extends Ficha{
+	
+	super
+}
