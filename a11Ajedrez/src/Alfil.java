@@ -10,9 +10,75 @@ public class Alfil extends Ficha {
 	}
 
 	@Override
-	public LinkedList<Posicion> posiblesPosiciones(Tablero tab) {
+public LinkedList<Posicion> posiblesPosiciones(Tablero tab) {
 		
-		return null;
+		
+		LinkedList<Posicion> posibles=new LinkedList<Posicion>();
+		Ficha[][] casillas=tab.casillas;
+		int x=this.posicion.x, y=this.posicion.y;
+		int tempx, tempy;
+		 
+		
+		//derecha, arriba
+		tempx=x+1; 
+		tempy=y-1;
+		while(tempx<8&&tempy>=0)
+		{
+			if(casillas[tempx][tempy]==null)posibles.add(new Posicion(tempx,tempy));
+			else if(casillas[tempx][tempy].color==this.color) break;
+			else {
+				posibles.add(new Posicion(tempx,tempy));
+				break;
+			}
+			tempx++;
+			tempy--;
+		}
+				
+		//izquierda abajo
+		tempx=x-1;
+		tempy=y+1;
+		while(tempx>=0&&tempy<8)
+		{
+			if(casillas[tempx][tempy]==null) posibles.add(new Posicion(tempx,tempy));
+			else if(casillas[tempx][tempy].color==this.color) break;
+			else {
+				posibles.add(new Posicion(tempx,tempy));
+				break;
+			}
+			tempx--;
+			tempy++;
+		}
+		
+		//izquierda arriba
+		tempx=x-1;
+		tempy=y-1;
+		while(tempx>=0&&tempy>=0)
+		{
+			if(casillas[tempx][tempy]==null) posibles.add(new Posicion(tempx,tempy));
+			else if(casillas[tempx][tempy].color==this.color) break;
+			else {
+				posibles.add(new Posicion(tempx,tempy));
+				break;
+			}
+			tempx--;
+			tempy--;
+		}
+		
+		//derecha abajo
+		tempx=x+1;
+		tempy=y+1;
+		while(tempx<8&&tempy<8)
+		{
+			if(casillas[tempx][tempy]==null) posibles.add(new Posicion(tempx,tempy));
+			else if(casillas[tempx][tempy].color==this.color) break;
+			else {
+				posibles.add(new Posicion(tempx,tempy));
+				break;
+			}
+			tempx++;
+			tempy++;
+		}
+		return posibles;
 	}
 
 }

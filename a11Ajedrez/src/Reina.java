@@ -8,7 +8,7 @@ public class Reina extends Ficha {
 		super(x, y, c, (c=='B' || c=='b')? "\u265B":"\u2655");
 	}
 
-	@Override
+	@Override 
 	public LinkedList<Posicion> posiblesPosiciones(Tablero tab) {
 		
 		
@@ -83,7 +83,7 @@ public class Reina extends Ficha {
 			tempy--;
 		}
 				
-		//izquierda arriba
+		//izquierda abajo
 		tempx=x-1;
 		tempy=y+1;
 		while(tempx>=0&&tempy<8)
@@ -98,7 +98,7 @@ public class Reina extends Ficha {
 			tempy++;
 		}
 		
-		//izquierda abajo
+		//derecha abajo
 		tempx=x-1;
 		tempy=y-1;
 		while(tempx>=0&&tempy>=0)
@@ -113,7 +113,7 @@ public class Reina extends Ficha {
 			tempy--;
 		}
 		
-		//izquierda arriba
+		//derecha abajo
 		tempx=x+1;
 		tempy=y+1;
 		while(tempx<8&&tempy<8)
